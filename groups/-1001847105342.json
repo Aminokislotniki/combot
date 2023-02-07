@@ -1,0 +1,43 @@
+{
+    "group_id": -1001847105342,
+    "name_group": "TEstBot",
+    "creator": 958693574,
+    "admin_group": [
+        {
+            "id_user": 6102379005,
+            "user_name": "БотManager"
+        }
+    ],
+    "number_message": "null",
+    "number_of_subscribers": 2,
+    "subscribers": [],
+    "subscribers_ban_number": "null",
+    "subscribers_ban": [],
+    "subscribers_del_number": 4,
+    "subscribers_del": [
+        {
+            "id_user": 5234143552,
+            "user_name": "R R",
+            "user_username": null,
+            "status": "delete"
+        },
+        {
+            "id_user": 1852053261,
+            "user_name": "sasha",
+            "user_username": null,
+            "status": "delete"
+        },
+        {
+            "id_user": 5117107875,
+            "user_name": "Олег",
+            "user_username": null,
+            "status": "delete"
+        },
+        {
+            "id_user": 673542622,
+            "user_name": "Юрченко",
+            "user_username": "nastachka_09",
+            "status": "delete"
+        }
+    ]
+}
