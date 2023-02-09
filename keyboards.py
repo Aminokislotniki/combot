@@ -5,7 +5,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import json
 
 
-#Стартовая клавиатура
+#Стартовая клавиатура, флаг st,in
 def start_keyboard(user_id):
     keyboard = InlineKeyboardMarkup(row_width=2)
     button_1 = InlineKeyboardButton('➕Добавить в чат ', url='https://t.me/manager_chat_tim_bot?startgroup')
@@ -15,6 +15,7 @@ def start_keyboard(user_id):
     return keyboard
 
 
+# клавиатура для отображения групп, где бот является админом, флаг st,ss
 def statistics_keyboard(statistic,page_number,user_id):
     print(f' номер страницы {page_number}')
     keyboard = InlineKeyboardMarkup(row_width=2)
@@ -44,6 +45,7 @@ def statistics_keyboard(statistic,page_number,user_id):
     return keyboard
 
 
+# клавиатура информативная, для возврата в меню и инфо, флаг in,ss
 def return_keyboard(num):
     keyboard = InlineKeyboardMarkup(row_width=2)
     button_1 = InlineKeyboardButton('➕ Все понятно', callback_data='ss')
@@ -53,3 +55,23 @@ def return_keyboard(num):
     elif num == "statist":
         keyboard.add(button_1, button_2)
     return keyboard
+
+
+# клавиатура отображает меню статистики для администратора по выбранной группе флаг du,bv,su,rp,st
+def group_menu_stat(group_id,user_id):
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    button1 = InlineKeyboardButton('Добавить уведомление', callback_data="du" + str(group_id))
+    button2 = InlineKeyboardButton('Добавить ban слова', callback_data="bv" + str(group_id))
+    button3 = InlineKeyboardButton('Статистика', callback_data="su" + str(group_id))
+    button4 = InlineKeyboardButton('Редактор профиля', callback_data="rp" + str(group_id))
+    exitbutton = InlineKeyboardButton(text="выход ✖️", callback_data="ss")
+    backbutton = InlineKeyboardButton(text="назад ✖️", callback_data='st*0'+str(user_id))
+    keyboard.add(button1,button2,button3,button4,exitbutton,backbutton)
+    return keyboard
+
+
+
+
+
+
+

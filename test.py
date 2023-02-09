@@ -1,22 +1,28 @@
-new_user_id = 210944655
-group_id = -1001847105342
-
-import json
-with open('groups/' + str(group_id) + '.json', 'r', encoding='utf-8') as f:
-    list_group = json.loads(f.read())
-    buf = []
-    for x in range(len(list_group['subscribers_del'])):
-        if list_group['subscribers_del'][x]['id_user'] == new_user_id:
-            del list_group['subscribers_del'][x]
+import os
+import time
+# path = os.getcwd()
+# print(path)
 
 
+num = 1
+x = 2
+while x > 1:
+    try:
+        os.replace(os.getcwd()+'/groups/-839915842',
+        os.getcwd()+'/arhive_group/-839915842')
+        break
+    except PermissionError:
+        num = num + 1
+        try:
+            text = f'({num})'
+            os.rename(os.getcwd() + '/groups/-839915842',
+                        os.getcwd() + '/arhive_group/-839915842'+str(text))
+            time.sleep(2)
+            break
+        except FileExistsError:
+            x = 2
+            pass
 
-    #     buf.append(x['id_user'])
-    # if new_user_id in buf:
-    #     del list_group['subscribers_del'][x]
-    print(buf)
 
 
 
-    # with open("groups/" + str(group_id) + ".json", "w", encoding="utf-8") as f:
-    #     json.dump(list_group, f, ensure_ascii=False, indent=4)

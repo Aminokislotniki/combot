@@ -4,8 +4,16 @@
     "creator_username": "tima_minski",
     "group": [
         {
+            "group_id": -839915842,
+            "group_name": "HelloBY"
+        },
+        {
             "group_id": -1001847105342,
             "group_name": "TEstBot"
+        },
+        {
+            "group_id": -800072960,
+            "group_name": "GoldenPepsi"
         }
     ]
 }
