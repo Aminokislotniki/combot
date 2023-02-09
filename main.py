@@ -33,8 +33,8 @@ def call(call):
     user_id = call.message.chat.id
     data = dt(call.data)
     flag = fs(call.data)
-    handler_statistic(call)# хэндлер на кнопку статистика в главном меню бота
-    handler_ban_words(call)# хэндлер на кнопку добавить бан слова
+    handler_statistic(call)  # на кнопку статистика в главном меню бота
+    handler_ban_words(call)  #  на кнопку добавить бан слова
     # Флаг для выброса информации кнопка "Инфо"
     if flag == 'in':
         info = "info"
