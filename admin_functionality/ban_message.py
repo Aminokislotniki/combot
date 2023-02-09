@@ -31,10 +31,11 @@ def message_sharing(message):
 
 #получаем текст сообщения и удаляяем все пробелы таким образом вычисляем бан слова
 def clean_chat(message):
+    group_id = message.chat.id
     # получаем текст сообщения и удаляяем все пробелы
     text = message.text.lower().replace(' ', '')
     text_moder = "".join(c for c in text if c.isalnum())
-    f = open('banned_message.json', 'r', encoding='utf-8')
+    f = open('groups/' + str(group_id) + '/list_banned_words.json', 'r', encoding='utf-8')
     data = json.load(f)
     for x in data['banned_message']:
         if x in text_moder:

@@ -4,10 +4,10 @@
 from config import text_start, info_text,dt, fs
 from keyboards import start_keyboard, return_keyboard
 from loader import bot
-from admin_functionality.statistics_of_admin import handler_statistic
+from admin_functionality.statistics_admin import handler_statistic
 from admin_functionality.ban_message import bot
-from admin_functionality.add_ban_words import handler_ban_words
-
+from admin_functionality.ban_words import handler_ban_words
+from admin_functionality.add_del_admin_user import bot
 
 @bot.message_handler(chat_types=['private'], commands=['stst'])
 def change_profile(message):

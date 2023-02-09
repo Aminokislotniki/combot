@@ -141,13 +141,16 @@ def group_file_archive(message,group_id):
         with open("administrator/" + str(creator_id) + ".json", "r", encoding="utf-8") as f:
             list = json.loads(f.read())
             for x in range(len(list['group'])):
-                if list['group'][x]['group_id'] == group_id:
+                if list['group'][x]['group_id'] == int(group_id):
                     del list['group'][x]
         with open("administrator/" + str(creator_id) + ".json", "w", encoding="utf-8") as f:
             json.dump(list, f, ensure_ascii=False, indent=4)
         f.close()
+        print(" админ удален")
     except IndexError:
+        print(" админ не удален")
         pass
+
 
     num = 1
     x = 2
@@ -233,14 +236,15 @@ def handler_new_member(message):
 
 
 # обрабатывает всех, кто удалился из группы
-
+@bot.message_handler(content_types=['left_chat_member'])
 def not_greeting(message):
     group_id = message.chat.id  # id группы
     print("User " + message.left_chat_member.first_name + " left")
     try:
         if message.left_chat_member.id != int(id_bot):
             check_del_user(message, group_id)
-        else:
+        if message.left_chat_member.id == int(id_bot):
+            print("про")
             group_file_archive(message, group_id)
     except OSError:
         pass
