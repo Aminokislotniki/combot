@@ -54,9 +54,11 @@ def check_is_group(group_id,group_title):
         f.close()
 
     # создаем файл с уведомлениями {"text": "null", "interval": "null"}
-        text_push = {"active": [],
-                     "saved": [],
-                     "new": []}
+        text_push = {"active": "",
+                     "time": "",
+                     "public": "",
+                     "new": "null",
+                     "new_time": "null"}
         with open(f'groups/{str(group_id)}/push_notifications.json', "a", encoding="utf-8") as f:
             json.dump(text_push, f, ensure_ascii=False, indent=4, )
         f.close()

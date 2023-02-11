@@ -6,16 +6,12 @@ from loader import bot
 from config import text_start, info_text,dt, fs
 from keyboards import start_keyboard, return_keyboard
 from admin_functionality.statistics_admin import handler_statistic
-from admin_functionality.ban_message import message_sharing,clean_chat
-from admin_functionality.ban_words import handler_ban_words,change_ban_words
+from bot_functionality.ban_message import message_sharing,clean_chat
+from bot_functionality.ban_words import handler_ban_words
 from admin_functionality.add_del_admin_user import new_memders,left_member
 from admin_functionality.push_notifications import handler_notifications
 
 
-
-# @bot.message_handler(content_types=['text'], chat_types=["private"])
-# def mess(message):
-#     pass
 
 @bot.message_handler(chat_types=['private'], commands=['stst'])
 def change_profile(message):

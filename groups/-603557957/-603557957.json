@@ -1,0 +1,27 @@
+{
+    "group_id": -603557957,
+    "name_group": "hiti",
+    "creator": "null",
+    "admin_group": [],
+    "number_of_subscribers": 4,
+    "subscribers": [
+        {
+            "id_user": 958693574,
+            "user_name": "Aminokislotniki",
+            "user_username": "tima_minski",
+            "status": "active",
+            "photo": "null",
+            "description": "null",
+            "karma": {
+                "ban_words": "null",
+                "bad_comment": "null",
+                "good_comment": "null",
+                "all_messages": "null"
+            }
+        }
+    ],
+    "subscribers_ban_number": "null",
+    "subscribers_ban": [],
+    "subscribers_del_number": 0,
+    "subscribers_del": []
+}

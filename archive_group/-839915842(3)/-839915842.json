@@ -1,0 +1,37 @@
+{
+    "group_id": -839915842,
+    "name_group": "HelloBY",
+    "creator": "null",
+    "admin_group": [],
+    "number_of_subscribers": 5,
+    "subscribers": [
+        {
+            "id_user": 958693574,
+            "user_name": "Aminokislotniki",
+            "user_username": "tima_minski",
+            "status": "active",
+            "photo": "null",
+            "description": "null"
+        },
+        {
+            "id_user": 673542622,
+            "user_name": "Юрченко",
+            "user_username": "nastachka_09",
+            "status": "active",
+            "photo": "null",
+            "description": "null"
+        },
+        {
+            "id_user": 1939243382,
+            "user_name": "Elisha_bay",
+            "user_username": null,
+            "status": "active",
+            "photo": "null",
+            "description": "null"
+        }
+    ],
+    "subscribers_ban_number": "null",
+    "subscribers_ban": [],
+    "subscribers_del_number": 0,
+    "subscribers_del": []
+}

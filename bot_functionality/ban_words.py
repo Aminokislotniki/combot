@@ -91,7 +91,6 @@ def message_write(message,call,group_id):
                               reply_markup=keyboard_ban_text(group_id, user_id, val),
                               parse_mode="Markdown", disable_web_page_preview=True)
 
-
     # принимает сообщение и удаляет его из бан-листа, если в сообщении есть слова del/
     if message.content_type == "text" and 'del/' in message.text:
 
@@ -110,6 +109,13 @@ def message_write(message,call,group_id):
                                    f'Нажмите "Редактировать", чтоб изменить список 👌\n',
                               reply_markup=keyboard_ban_text(group_id, user_id, val),
                               parse_mode="Markdown", disable_web_page_preview=True)
+    else:
+        bot.edit_message_text(message_id=call.message.message_id, chat_id=call.message.chat.id,
+                              text='⚠️Ошибка ввода бан-слова⚠️ \n\n'
+                                   'Попробуйте еще раз, указывать ТЕКСТОМ',
+                              reply_markup=keyboard_ban_text(group_id, user_id, val),
+                              parse_mode="Markdown", disable_web_page_preview=True)
+
     list_words['banned_message'] = buf
     with open(f'groups/{str(group_id)}/list_banned_words.json', "w", encoding="utf-8") as f:
         json.dump(list_words, f, ensure_ascii=False, indent=4)

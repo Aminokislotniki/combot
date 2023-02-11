@@ -3,7 +3,7 @@ from config import dt, fs
 import json
 from keyboards import statistics_keyboard, return_keyboard, group_menu_stat
 from config import loser_text
-from admin_functionality.ban_words import text_ban
+from bot_functionality.ban_words import text_ban
 from admin_functionality.push_notifications import notification
 
 

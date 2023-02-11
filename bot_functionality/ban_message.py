@@ -1,16 +1,17 @@
+# Тима Минский tg: https://t.me/tima_minski
+# Сортировка сообщений по файлам группы, контроль бан слов
+
 from loader import bot
 import json
-import re
+
 
 
 # Функция принимает все сообщения и сортирует по группам, за каждым пользователем
-# закрепляется 2 системы подсчета: Карма и Активность.
 # Когда пользователь пишет сообщение - файл с данными пользователя обновляется
 def message_sharing(message):
     group_id = message.chat.id  # id группы
     list_admin_group = bot.get_chat_administrators(chat_id=group_id)  # все админы чата, включая владельца
     number_of_subscribers = bot.get_chat_member_count(chat_id=group_id)  # колличество подписчиков чата
-    group_id = message.chat.id
     message_text = message.text
     message_time = message.date
     message_user = message.from_user.id

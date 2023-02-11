@@ -1,24 +1,10 @@
 {
-    "group_id": -800072960,
-    "name_group": "GoldenPepsi",
+    "group_id": -894934506,
+    "name_group": "Рарир",
     "creator": "null",
     "admin_group": [],
-    "number_of_subscribers": 5,
+    "number_of_subscribers": 3,
     "subscribers": [
-        {
-            "id_user": 673542622,
-            "user_name": "Юрченко",
-            "user_username": "nastachka_09",
-            "status": "active",
-            "photo": "null",
-            "description": "null",
-            "karma": {
-                "ban_words": "null",
-                "bad_comment": "null",
-                "good_comment": "null",
-                "all_messages": "null"
-            }
-        },
         {
             "id_user": 1939243382,
             "user_name": "Elisha_bay",
