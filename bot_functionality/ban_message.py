@@ -43,10 +43,10 @@ def message_sharing(message):
                                               'photo': "null",
                                               'description': "null",
                                               'karma': {
-                                                        'ban_words': "null",
-                                                        'bad_comment': "null",
-                                                        'good_comment': "null",
-                                                        'all_messages': "null"}
+                                                        'ban_words': 0,
+                                                        'bad_comment': 0,
+                                                        'good_comment': 0,
+                                                        'all_messages': 0}
                                               })
 
         list_group['number_of_subscribers'] = number_of_subscribers

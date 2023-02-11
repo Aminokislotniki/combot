@@ -1,24 +1,10 @@
 {
-    "group_id": -603557957,
-    "name_group": "hiti",
+    "group_id": -839915842,
+    "name_group": "HelloBY",
     "creator": "null",
     "admin_group": [],
-    "number_of_subscribers": 4,
+    "number_of_subscribers": 5,
     "subscribers": [
-        {
-            "id_user": 958693574,
-            "user_name": "Aminokislotniki",
-            "user_username": "tima_minski",
-            "status": "active",
-            "photo": "null",
-            "description": "null",
-            "karma": {
-                "ban_words": 1,
-                "bad_comment": "null",
-                "good_comment": "null",
-                "all_messages": 6
-            }
-        },
         {
             "id_user": 1939243382,
             "user_name": "Elisha_bay",
@@ -30,7 +16,7 @@
                 "ban_words": 0,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 1
+                "all_messages": 2
             }
         }
     ],

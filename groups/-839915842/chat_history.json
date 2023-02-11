@@ -1,4 +1,10 @@
 {
-    "number_message": "null",
-    "chat_text": []
+    "number_message": 1,
+    "chat_text": [
+        {
+            "date": 1676150897,
+            "user": 958693574,
+            "text": "dff"
+        }
+    ]
 }

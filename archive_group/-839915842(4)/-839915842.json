@@ -1,13 +1,8 @@
 {
     "group_id": -839915842,
     "name_group": "HelloBY",
-    "creator": "Aminokislotniki",
-    "admin_group": [
-        {
-            "id_user": 6102379005,
-            "user_name": "БотManager"
-        }
-    ],
+    "creator": "null",
+    "admin_group": [],
     "number_of_subscribers": 5,
     "subscribers": [
         {
@@ -21,16 +16,22 @@
                 "ban_words": 0,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 1
+                "all_messages": 2
             }
         },
         {
-            "id_user": 673542622,
-            "user_name": "Юрченко",
-            "user_username": "nastachka_09",
+            "id_user": 1939243382,
+            "user_name": "Elisha_bay",
+            "user_username": null,
             "status": "active",
             "photo": "null",
-            "description": "null"
+            "description": "null",
+            "karma": {
+                "ban_words": 0,
+                "bad_comment": 0,
+                "good_comment": 0,
+                "all_messages": 1
+            }
         }
     ],
     "subscribers_ban_number": "null",

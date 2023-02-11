@@ -20,8 +20,6 @@ def check_is_user(message, group_id,new_user_id):
         admin_username = admin.user.username
         admin_status = admin.status #creator
         buf_list = []
-        if admin_status == "creator":
-            list_group['creator'] = admin_id
         if admin_status == 'administrator':
             for x in list_group['admin_group']:
                 buf_list.append(x['id_user'])

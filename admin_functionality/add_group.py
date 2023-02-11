@@ -16,10 +16,17 @@ def check_is_group(group_id,group_title):
     except:
         path = os.getcwd()
         os.makedirs(f'groups/{group_id}',exist_ok=True)
+        list_admin_group = bot.get_chat_administrators(chat_id=group_id)  # все админы чата, включая владельца
+        admin_name1 = ""
+        for admin in list_admin_group:
+            admin_name = admin.user.first_name
+            admin_status = admin.status  # creator
+            if admin_status == "creator":
+                 admin_name1 = admin_name
         with open(f'groups/{str(group_id)}/{str(group_id)}.json', "w", encoding="utf-8") as f:
             group_list = dict({'group_id': group_id,
                                'name_group': group_title,
-                               'creator': 'null',
+                               'creator': admin_name1,
                                'admin_group': [],
                                'number_of_subscribers': 'null',
                                'subscribers': [],
@@ -58,7 +65,9 @@ def check_is_group(group_id,group_title):
                      "time": "",
                      "public": "",
                      "new": "null",
-                     "new_time": "null"}
+                     "new_time": "null",
+                     "push_statistic": "",
+                     "public_push_statistic": "no"}
         with open(f'groups/{str(group_id)}/push_notifications.json', "a", encoding="utf-8") as f:
             json.dump(text_push, f, ensure_ascii=False, indent=4, )
         f.close()

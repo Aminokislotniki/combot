@@ -1,14 +1,9 @@
 {
-    "group_id": -839915842,
-    "name_group": "HelloBY",
+    "group_id": -1001814659079,
+    "name_group": "jd",
     "creator": "Aminokislotniki",
-    "admin_group": [
-        {
-            "id_user": 6102379005,
-            "user_name": "БотManager"
-        }
-    ],
-    "number_of_subscribers": 5,
+    "admin_group": [],
+    "number_of_subscribers": 3,
     "subscribers": [
         {
             "id_user": 958693574,
@@ -18,19 +13,11 @@
             "photo": "null",
             "description": "null",
             "karma": {
-                "ban_words": 0,
+                "ban_words": 2,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 1
+                "all_messages": 2
             }
-        },
-        {
-            "id_user": 673542622,
-            "user_name": "Юрченко",
-            "user_username": "nastachka_09",
-            "status": "active",
-            "photo": "null",
-            "description": "null"
         }
     ],
     "subscribers_ban_number": "null",

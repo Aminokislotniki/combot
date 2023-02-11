@@ -1,7 +1,9 @@
 {
-    "active": "гуси",
-    "time": "20",
-    "public": "yes",
-    "new": "гуси",
-    "new_time": "20"
+    "active": "",
+    "time": "",
+    "public": "",
+    "new": "Бу-га-га",
+    "new_time": "10",
+    "push_statistic": "3",
+    "public_push_statistic": "no"
 }

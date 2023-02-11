@@ -18,7 +18,7 @@ def start_keyboard(user_id):
 # клавиатура для отображения групп, где бот является админом, флаг st,ss
 def statistics_keyboard(statistic,page_number,user_id):
     print(f' номер страницы {page_number}')
-    keyboard = InlineKeyboardMarkup(row_width=2)
+    keyboard = InlineKeyboardMarkup(row_width=1)
     backbutton = InlineKeyboardButton(text="🔙 предыдущие ", callback_data="st*" + str(page_number - 1)+str(user_id))
     nextbutton = InlineKeyboardButton(text="следующие 🔜", callback_data="st*" + str(page_number + 1)+str(user_id))
     exitbutton = InlineKeyboardButton(text="выход ✖️", callback_data="ss")

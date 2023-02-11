@@ -1,3 +1,4 @@
+from bot_functionality.statistics_group import statistic_group
 from loader import bot
 from config import dt, fs
 import json
@@ -60,7 +61,8 @@ def handler_statistic(call):
         text_ban(call,group_id)
     # флаг выдает статистику по группе (сколько подписчиков, сообщений, и прочее)
     if flag == "su":
-        pass
+        group_id = data
+        statistic_group(call,group_id)
     # флаг выдает редактор профиля
     if flag == "rp":
         pass

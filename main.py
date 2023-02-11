@@ -1,7 +1,9 @@
 # Тима Минский tg: https://t.me/tima_minski
 # главная ветка проекта, handler и прочие обработки
+from time import time
 
-
+from bot_functionality.karma_and_activity import karma
+from bot_functionality.statistics_group import handler_statistic_group
 from loader import bot
 from config import text_start, info_text,dt, fs
 from keyboards import start_keyboard, return_keyboard
@@ -10,7 +12,6 @@ from bot_functionality.ban_message import message_sharing,clean_chat
 from bot_functionality.ban_words import handler_ban_words
 from admin_functionality.add_del_admin_user import new_memders,left_member
 from admin_functionality.push_notifications import handler_notifications
-
 
 
 @bot.message_handler(chat_types=['private'], commands=['stst'])
@@ -35,14 +36,14 @@ def start(message):
 def check_banned_message(message):
     message_sharing(message)
     clean_chat(message)
-
+    karma(message)
 
 # хэндлер работает только в группах chat_types=['group'], в боте не фурычит
 @bot.message_handler(chat_types=['group'], content_types=["text"])
 def check_banned_message(message):
     message_sharing(message)
     clean_chat(message)
-
+    karma(message)
 
 
 
@@ -58,6 +59,7 @@ def not_greeting(message):
     left_member(message)
 
 
+
 @bot.callback_query_handler(func=lambda call: True)
 def call(call):
     idx = call.message.chat.id
@@ -68,6 +70,7 @@ def call(call):
     handler_statistic(call)  # на кнопку статистика в главном меню бота flag = du,bv,su,rp
     handler_ban_words(call)  #  на кнопку добавить бан слова flag = rv
     handler_notifications(call) # на кнопку уведомления в меню группы flag = cn,an,cr
+    handler_statistic_group(call)
     # Флаг для выброса информации кнопка "Инфо"
     if flag == 'in':
         info = "info"
@@ -82,9 +85,6 @@ def call(call):
         bot.send_message(call.message.chat.id, text_start,
                          reply_markup=start_keyboard(user_id),parse_mode='Markdown',
                                       disable_web_page_preview=True)
-
-
-
 
 
 

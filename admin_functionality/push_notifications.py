@@ -17,7 +17,7 @@ def keyboard(call,group_id,val):
     button4 = InlineKeyboardButton("Добавить интервал", callback_data="pr" + str(group_id))
 
 
-    exitbutton = InlineKeyboardButton(text="выход ✖️", callback_data="ss")
+    exitbutton = InlineKeyboardButton(text="выход ✖️", callback_data="ss" + str(group_id))
     backbutton = InlineKeyboardButton('назад', callback_data="st:" + str(group_id))
     backbutton2 = InlineKeyboardButton('назад', callback_data="du" + str(group_id))
     backbutton3 = InlineKeyboardButton('назад', callback_data="pr" + str(group_id)) # интервал изменить
