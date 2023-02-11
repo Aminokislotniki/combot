@@ -1,0 +1,41 @@
+{
+    "group_id": -1001814659079,
+    "name_group": "jd",
+    "creator": "null",
+    "admin_group": [],
+    "number_of_subscribers": 3,
+    "subscribers": [
+        {
+            "id_user": 958693574,
+            "user_name": "Aminokislotniki",
+            "user_username": "tima_minski",
+            "status": "active",
+            "photo": "null",
+            "description": "null",
+            "karma": {
+                "ban_words": 0,
+                "bad_comment": 0,
+                "good_comment": 0,
+                "all_messages": 1
+            }
+        },
+        {
+            "id_user": 1939243382,
+            "user_name": "Elisha_bay",
+            "user_username": null,
+            "status": "active",
+            "photo": "null",
+            "description": "null",
+            "karma": {
+                "ban_words": 0,
+                "bad_comment": 0,
+                "good_comment": 0,
+                "all_messages": 1
+            }
+        }
+    ],
+    "subscribers_ban_number": "null",
+    "subscribers_ban": [],
+    "subscribers_del_number": 0,
+    "subscribers_del": []
+}
