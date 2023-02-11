@@ -1,0 +1,15 @@
+{
+    "banned_message": [
+        "плохо"
+    ],
+    "karma": {
+        "punishment_ban_words": "null",
+        "punishment_bad_comment": "null",
+        "good_comment_reward": "null"
+    },
+    "active": {
+        "new_messages": "null",
+        "no_messages": "null",
+        "time": "null"
+    }
+}

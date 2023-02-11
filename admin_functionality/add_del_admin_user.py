@@ -1,41 +1,7 @@
 from loader import bot, id_bot
 import json
 import os
-
-
-# функция проверяет наличие файла с названием группы в директории "group" при подключении бота
-# если файла нет, то добавляет, в файл записывает: id группы -> список администраторов, кто владелец,
-# сколько подписчиков, и т.д
-def check_is_group(group_id,group_title):
-    try:
-        with open(f'groups/{str(group_id)}/{str(group_id)}.json', "r", encoding="utf-8") as f:
-            f.close()
-            print(f'файл с ID группы "{group_id}" есть.')
-        return True
-    except:
-        path = os.getcwd()
-        os.makedirs(f'groups/{group_id}',exist_ok=True)
-        with open(f'groups/{str(group_id)}/{str(group_id)}.json', "w", encoding="utf-8") as f:
-            group_list = dict({'group_id': group_id,
-                               'name_group': group_title,
-                               'creator': 'null',
-                               'admin_group': [],
-                               'number_of_subscribers': 'null',
-                               'subscribers': [],
-                               'subscribers_ban_number': 'null',
-                               'subscribers_ban': [],
-                               'subscribers_del_number': 'null',
-                               'subscribers_del': []
-                               })
-            json.dump(group_list, f, ensure_ascii=False, indent=4)
-        print(f'добавил файл с ID новой группы: "{group_id}"')
-
-        # добавляем файл бан слов(пустой файл)
-        list_ban = {"banned_message": []}
-        with open(f'groups/{str(group_id)}/list_banned_words.json', "w", encoding="utf-8") as f:
-            json.dump(list_ban, f, ensure_ascii=False, indent=4)
-        f.close()
-        return False
+from admin_functionality.add_group import check_is_group,group_file_archive
 
 
 # функция проверяет наличие нового пользователя по ID в json файле группы
@@ -69,12 +35,10 @@ def check_is_user(message, group_id,new_user_id):
     new_user_username = message.new_chat_members[0].username
     new_user_is_bot = message.new_chat_members[0].is_bot
 
-    try:
-        for x in range(len(list_group['subscribers_del'])):
-            if list_group['subscribers_del'][x]['id_user'] == new_user_id:
-                del list_group['subscribers_del'][x]
-    except IndexError:
-        pass
+    for i in range(len(list_group['subscribers_del'])):
+        if str(new_user_id) in str(list_group['subscribers_del'][i]['id_user']):
+            del list_group['subscribers_del'][i]
+            break
 
     buf_list_new_user = []
     for x in list_group['subscribers']:
@@ -129,48 +93,6 @@ def check_is_admin(message, group_id):
                     json.dump(admin_dict, f, ensure_ascii=False, indent=4)
 
 
-# функция перекидывает папку с данными группы в архив,
-# если пользователь снова добавил бота в группу, то создается новая папка,
-# таким образом сохраниться вся история добавления и удаления бота в группе
-def group_file_archive(message,group_id):
-    # Если удалили "БoтManager" из группы, весь архив остается, у админа в json группа удаляется
-    # папка с данными группы (название папки - ID группы) перекидывается в архивную папку
-    creator_id = message.from_user.id
-
-    try:
-        with open("administrator/" + str(creator_id) + ".json", "r", encoding="utf-8") as f:
-            list = json.loads(f.read())
-            for x in range(len(list['group'])):
-                if list['group'][x]['group_id'] == int(group_id):
-                    del list['group'][x]
-        with open("administrator/" + str(creator_id) + ".json", "w", encoding="utf-8") as f:
-            json.dump(list, f, ensure_ascii=False, indent=4)
-        f.close()
-        print(" админ удален")
-    except IndexError:
-        print(" админ не удален")
-        pass
-
-
-    num = 1
-    x = 2
-    while x > 1:
-        try:
-            os.replace(os.getcwd() + '/groups/' + str(group_id),
-                       os.getcwd() + '/archive_group/' + str(group_id))
-            break
-        except PermissionError:
-            num = num + 1
-            try:
-                text = f'({num})'
-                os.rename(os.getcwd() + '/groups/' + str(group_id),
-                          os.getcwd() + '/archive_group/' + str(group_id) + str(text))
-                break
-            except FileExistsError:
-                x = 2
-                pass
-
-
 # функция ловит удаленных пользователей, записывает в файл
 def check_del_user(message,group_id):
     creator_id = message.from_user.id
@@ -182,20 +104,17 @@ def check_del_user(message,group_id):
         list_group = json.loads(f.read())
 
     # удаляем пользователя из списка активных подписчиков
-    try:
-        for x in range(len(list_group['subscribers'])):
-            if list_group['subscribers'][x]['id_user'] == del_user_id:
-                del list_group['subscribers'][x]
-    except IndexError:
-        pass
+    for i in range(len(list_group['subscribers'])):
+        if str(del_user_id) in str(list_group['subscribers'][i]['id_user']):
+            del list_group['subscribers'][i]
+            break
 
     # если пользователь был администратором, то удаляем его из списка администраторов
-    try:
-        for x in range(len(list_group['admin_group'])):
-            if list_group['admin_group'][x]['id_user'] == del_user_id:
-                del list_group['admin_group'][x]
-    except IndexError:
-        pass
+    for i in range(len(list_group['admin_group'])):
+        if str(del_user_id) in str(list_group['admin_group'][i]['id_user']):
+            del list_group['admin_group'][i]
+            break
+
 
     # добавляем удаленного пользователя в файле группы в список "subscribers_del"
     buf_list_new_user = []
@@ -216,10 +135,8 @@ def check_del_user(message,group_id):
         json.dump(list_group, f, ensure_ascii=False, indent=4)
 
 
-
 # обрабатывает всех, кто подписался/добавили в группу
-@bot.message_handler(content_types=["new_chat_members"])
-def handler_new_member(message):
+def new_memders(message):
     print("hello")
     group_title = message.chat.title # название группы
     group_id = message.chat.id # id группы
@@ -236,8 +153,7 @@ def handler_new_member(message):
 
 
 # обрабатывает всех, кто удалился из группы
-@bot.message_handler(content_types=['left_chat_member'])
-def not_greeting(message):
+def left_member(message):
     group_id = message.chat.id  # id группы
     print("User " + message.left_chat_member.first_name + " left")
     try:

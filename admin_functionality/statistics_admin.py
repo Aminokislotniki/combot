@@ -3,7 +3,9 @@ from config import dt, fs
 import json
 from keyboards import statistics_keyboard, return_keyboard, group_menu_stat
 from config import loser_text
-from admin_functionality.ban_words import add_text_ban
+from admin_functionality.ban_words import text_ban
+from admin_functionality.push_notifications import notification
+
 
 # функция хэндлер "статистика" принимает call
 def handler_statistic(call):
@@ -50,11 +52,12 @@ def handler_statistic(call):
 
     # флаг добавляет регулярного сообщения (раз в n времени присылается ботом)
     if flag == "du":
-        pass
+        group_id = data
+        notification(call, group_id)
     # флаг выдает список бан слов, и две кнопки, редактировать и сохранить
     if flag == "bv":
         group_id = data
-        add_text_ban(call,group_id)
+        text_ban(call,group_id)
     # флаг выдает статистику по группе (сколько подписчиков, сообщений, и прочее)
     if flag == "su":
         pass

@@ -1,0 +1,34 @@
+{
+    "group_id": -800072960,
+    "name_group": "GoldenPepsi",
+    "creator": 958693574,
+    "admin_group": [
+        {
+            "id_user": 6102379005,
+            "user_name": "БотManager"
+        }
+    ],
+    "number_of_subscribers": 5,
+    "subscribers": [
+        {
+            "id_user": 673542622,
+            "user_name": "Юрченко",
+            "user_username": "nastachka_09",
+            "status": "active",
+            "photo": "null",
+            "description": "null"
+        },
+        {
+            "id_user": 958693574,
+            "user_name": "Aminokislotniki",
+            "user_username": "tima_minski",
+            "status": "active",
+            "photo": "null",
+            "description": "null"
+        }
+    ],
+    "subscribers_ban_number": "null",
+    "subscribers_ban": [],
+    "subscribers_del_number": 0,
+    "subscribers_del": []
+}

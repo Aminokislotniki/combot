@@ -1,0 +1,21 @@
+{
+    "group_id": -839915842,
+    "name_group": "HelloBY",
+    "creator": "null",
+    "admin_group": [],
+    "number_of_subscribers": 5,
+    "subscribers": [
+        {
+            "id_user": 958693574,
+            "user_name": "Aminokislotniki",
+            "user_username": "tima_minski",
+            "status": "active",
+            "photo": "null",
+            "description": "null"
+        }
+    ],
+    "subscribers_ban_number": "null",
+    "subscribers_ban": [],
+    "subscribers_del_number": 0,
+    "subscribers_del": []
+}
