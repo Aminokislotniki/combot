@@ -4,12 +4,12 @@
     "creator_username": "tima_minski",
     "group": [
         {
-            "group_id": -800072960,
-            "group_name": "GoldenPepsi"
-        },
-        {
             "group_id": -603557957,
             "group_name": "hiti"
+        },
+        {
+            "group_id": -1001814659079,
+            "group_name": "jd"
         },
         {
             "group_id": -1001780336564,
@@ -18,10 +18,6 @@
         {
             "group_id": -839915842,
             "group_name": "HelloBY"
-        },
-        {
-            "group_id": -1001814659079,
-            "group_name": "jd"
         }
     ]
 }

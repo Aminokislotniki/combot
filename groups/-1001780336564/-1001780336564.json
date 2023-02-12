@@ -1,22 +1,23 @@
 {
     "group_id": -1001780336564,
     "name_group": "GoldenPepsi",
-    "creator": "null",
+    "creator": "Aminokislotniki",
     "admin_group": [],
     "number_of_subscribers": 4,
     "subscribers": [
         {
-            "id_user": 1939243382,
-            "user_name": "Elisha_bay",
-            "user_username": null,
+            "id_user": 958693574,
+            "user_name": "Aminokislotniki",
+            "user_username": "tima_minski",
             "status": "active",
-            "photo": "null",
-            "description": "null",
+            "photo": "",
+            "description": "",
             "karma": {
                 "ban_words": 0,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 3
+                "all_messages": 1,
+                "reputation": 0
             }
         }
     ],

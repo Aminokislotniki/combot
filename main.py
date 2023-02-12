@@ -12,6 +12,7 @@ from bot_functionality.ban_message import message_sharing,clean_chat
 from bot_functionality.ban_words import handler_ban_words
 from admin_functionality.add_del_admin_user import new_memders,left_member
 from admin_functionality.push_notifications import handler_notifications
+from user.user_cards import user_card
 
 
 @bot.message_handler(chat_types=['private'], commands=['stst'])
@@ -21,6 +22,10 @@ def change_profile(message):
 
     bot.send_message(message.chat.id, f'Hello , <b>{name}</b> ! ☺️ \n' 
                      f' Ты можешь изменить свою карточку пользователя! \n', parse_mode="html")
+
+
+
+
 
 @bot.message_handler(chat_types=['private'],commands=['start'])
 def start(message):
@@ -35,6 +40,7 @@ def start(message):
 @bot.message_handler(chat_types=['supergroup'], content_types=["text"])
 def check_banned_message(message):
     message_sharing(message)
+    user_card(message)
     clean_chat(message)
     karma(message)
 
@@ -42,6 +48,7 @@ def check_banned_message(message):
 @bot.message_handler(chat_types=['group'], content_types=["text"])
 def check_banned_message(message):
     message_sharing(message)
+    user_card(message)
     clean_chat(message)
     karma(message)
 
@@ -70,7 +77,9 @@ def call(call):
     handler_statistic(call)  # на кнопку статистика в главном меню бота flag = du,bv,su,rp
     handler_ban_words(call)  #  на кнопку добавить бан слова flag = rv
     handler_notifications(call) # на кнопку уведомления в меню группы flag = cn,an,cr
-    handler_statistic_group(call)
+    handler_statistic_group(call) # на кнопку статистики по группе
+
+
     # Флаг для выброса информации кнопка "Инфо"
     if flag == 'in':
         info = "info"

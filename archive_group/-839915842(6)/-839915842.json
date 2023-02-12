@@ -2,7 +2,12 @@
     "group_id": -839915842,
     "name_group": "HelloBY",
     "creator": "Aminokislotniki",
-    "admin_group": [],
+    "admin_group": [
+        {
+            "id_user": 6102379005,
+            "user_name": "БотManager"
+        }
+    ],
     "number_of_subscribers": 5,
     "subscribers": [
         {
@@ -10,14 +15,13 @@
             "user_name": "Aminokislotniki",
             "user_username": "tima_minski",
             "status": "active",
-            "photo": "",
-            "description": "",
+            "photo": "null",
+            "description": "null",
             "karma": {
-                "ban_words": 3,
+                "ban_words": 17,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 84,
-                "reputation": 0
+                "all_messages": 43
             }
         },
         {
@@ -25,29 +29,21 @@
             "user_name": "Юрченко",
             "user_username": "nastachka_09",
             "status": "active",
-            "photo": "",
-            "description": "",
-            "karma": {
-                "ban_words": 11,
-                "bad_comment": 0,
-                "good_comment": 0,
-                "all_messages": 43,
-                "reputation": 0
-            }
+            "photo": "null",
+            "description": "null"
         },
         {
             "id_user": 1939243382,
             "user_name": "Elisha_bay",
             "user_username": null,
             "status": "active",
-            "photo": "",
-            "description": "",
+            "photo": "null",
+            "description": "null",
             "karma": {
-                "ban_words": 1,
+                "ban_words": 16,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 51,
-                "reputation": 0
+                "all_messages": 42
             }
         }
     ],

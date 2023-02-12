@@ -40,13 +40,14 @@ def message_sharing(message):
                                               'user_name': user_first_name,
                                               'user_username': user_username,
                                               'status': "active",
-                                              'photo': "null",
-                                              'description': "null",
+                                              'photo': "",
+                                              'description': "",
                                               'karma': {
                                                         'ban_words': 0,
                                                         'bad_comment': 0,
                                                         'good_comment': 0,
-                                                        'all_messages': 0}
+                                                        'all_messages': 0,
+                                                        "reputation": 0}
                                               })
 
         list_group['number_of_subscribers'] = number_of_subscribers
@@ -64,8 +65,24 @@ def clean_chat(message):
     text_moder = "".join(c for c in text if c.isalnum())
     f = open('groups/' + str(group_id) + '/list_banned_words.json', 'r', encoding='utf-8')
     data = json.load(f)
+    g = open('groups/' + str(group_id) + '/' + str(group_id) + '.json', 'r', encoding='utf-8')
+    user_list = json.load(g)
+    g.close()
+    buf = []
     for x in data['banned_message']:
         if x in text_moder:
-            bot.delete_message(message.chat.id, message.message_id)
+            for i in user_list["subscribers"]:
+                if i["id_user"] == message.from_user.id:
+                    i["karma"]["ban_words"] = i["karma"]["ban_words"]+1
+                    buf = i["karma"]["ban_words"]
+                    with open('groups/' + str(group_id) + '/' + str(group_id) + '.json', "w", encoding="utf-8") as f:
+                        json.dump(user_list, f, ensure_ascii=False, indent=4)
+
+                        bot.reply_to(message, text=f'🔎 Замечено "плохое слово"!\n'
+                                                       f'🙎 Его написал <b>"{message.from_user.first_name}"</b>\n'
+                                                       f'😡 Не надо такое писать. Предупреждение № {buf}', parse_mode="html")
+                        bot.delete_message(message.chat.id, message.message_id)
+
+
 
 

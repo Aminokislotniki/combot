@@ -46,8 +46,15 @@ def check_is_user(message, group_id,new_user_id):
                                         'user_name': new_user_first_name,
                                         'user_username': new_user_username,
                                         'status': "active",
-                                        'photo': "null",
-                                        'description': "null"})
+                                        'photo': "",
+                                        'description': "",
+                                          'karma': {
+                                              'ban_words': 0,
+                                              'bad_comment': 0,
+                                              'good_comment': 0,
+                                              'all_messages': 0,
+                                              "reputation": 0}
+                                          })
 
     list_group['number_of_subscribers'] = number_of_subscribers
     list_group["subscribers_del_number"] = len(list_group['subscribers_del'])  # колличество удаленных пользователей
@@ -123,8 +130,14 @@ def check_del_user(message,group_id):
                                           'user_name': del_user_name,
                                           'user_username': user_username,
                                           'status': "delete",
-                                          'photo': "null",
-                                          'description': "null"
+                                          'photo': "",
+                                          'description': "",
+                                              'karma': {
+                                                  'ban_words': 0,
+                                                  'bad_comment': 0,
+                                                  'good_comment': 0,
+                                                  'all_messages': 0,
+                                                  "reputation": 0}
                                               })
 
         list_group["subscribers_del_number"] = len(list_group['subscribers_del']) # колличество удаленных пользователей

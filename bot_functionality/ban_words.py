@@ -79,10 +79,10 @@ def message_write(message,call,group_id):
     user_id = call.message.chat.id
 
     # принимает сообщение и добавляет его в бан лист, если в сообщении нет слова del/
-    if message.content_type == "text" and message.text.replace(" ", "") != "" and 'del/' not in message.text:
+    if message.content_type.lower() == "text" and 'del/' not in message.text:
         message.text = message.text.split(',')
         for x in message.text:
-            buf.append(x)
+            buf.append(x.lower())
         bot.edit_message_text(message_id=call.message.message_id, chat_id=call.message.chat.id,
                               text=f'Cохранено ☺️\n'
                                    f'Вот список "ban" слов 😊\n\n'
@@ -92,7 +92,7 @@ def message_write(message,call,group_id):
                               parse_mode="Markdown", disable_web_page_preview=True)
 
     # принимает сообщение и удаляет его из бан-листа, если в сообщении есть слова del/
-    if message.content_type == "text" and 'del/' in message.text:
+    if message.content_type.lower() == "text" and 'del/' in message.text:
 
         # удаляет пробелы в сообщении и бан-листе, сверяет и выдает бан-лист с удаленными словами/фразами
         message.text = message.text.replace("del/", "").replace(" ", "")
@@ -109,7 +109,7 @@ def message_write(message,call,group_id):
                                    f'Нажмите "Редактировать", чтоб изменить список 👌\n',
                               reply_markup=keyboard_ban_text(group_id, user_id, val),
                               parse_mode="Markdown", disable_web_page_preview=True)
-    else:
+    if message.content_type.lower()!= "text":
         bot.edit_message_text(message_id=call.message.message_id, chat_id=call.message.chat.id,
                               text='⚠️Ошибка ввода бан-слова⚠️ \n\n'
                                    'Попробуйте еще раз, указывать ТЕКСТОМ',

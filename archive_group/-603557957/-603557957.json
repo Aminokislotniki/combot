@@ -1,24 +1,10 @@
 {
-    "group_id": -800072960,
-    "name_group": "GoldenPepsi",
+    "group_id": -603557957,
+    "name_group": "hiti",
     "creator": "null",
     "admin_group": [],
     "number_of_subscribers": 4,
     "subscribers": [
-        {
-            "id_user": 673542622,
-            "user_name": "Юрченко",
-            "user_username": "nastachka_09",
-            "status": "active",
-            "photo": "null",
-            "description": "null",
-            "karma": {
-                "ban_words": 0,
-                "bad_comment": 0,
-                "good_comment": 0,
-                "all_messages": 15
-            }
-        },
         {
             "id_user": 958693574,
             "user_name": "Aminokislotniki",
@@ -27,10 +13,10 @@
             "photo": "null",
             "description": "null",
             "karma": {
-                "ban_words": 9,
+                "ban_words": 6,
                 "bad_comment": "null",
                 "good_comment": "null",
-                "all_messages": 40
+                "all_messages": 10
             }
         },
         {
@@ -44,21 +30,12 @@
                 "ban_words": 0,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 19
+                "all_messages": 1
             }
         }
     ],
     "subscribers_ban_number": "null",
     "subscribers_ban": [],
-    "subscribers_del_number": 1,
-    "subscribers_del": [
-        {
-            "id_user": 210944655,
-            "user_name": "Combot",
-            "user_username": "combot",
-            "status": "delete",
-            "photo": "null",
-            "description": "null"
-        }
-    ]
+    "subscribers_del_number": 0,
+    "subscribers_del": []
 }

@@ -1,15 +1,40 @@
 {
-    "number_message": 2,
+    "number_message": 7,
     "chat_text": [
         {
-            "date": 1676159196,
+            "date": 1676213420,
             "user": 958693574,
-            "text": "Ку"
+            "text": "/info"
         },
         {
-            "date": 1676159227,
+            "date": 1676213452,
             "user": 958693574,
-            "text": "Ку"
+            "text": "/info"
+        },
+        {
+            "date": 1676213493,
+            "user": 958693574,
+            "text": "/info"
+        },
+        {
+            "date": 1676213504,
+            "user": 958693574,
+            "text": "/info"
+        },
+        {
+            "date": 1676213522,
+            "user": 958693574,
+            "text": "/info"
+        },
+        {
+            "date": 1676213569,
+            "user": 958693574,
+            "text": "/info"
+        },
+        {
+            "date": 1676213679,
+            "user": 958693574,
+            "text": "/info"
         }
     ]
 }

@@ -1,5 +1,8 @@
 {
-    "banned_message": [],
+    "banned_message": [
+        "кот",
+        "собака"
+    ],
     "karma": {
         "punishment_ban_words": "null",
         "punishment_bad_comment": "null",

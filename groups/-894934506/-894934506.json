@@ -13,10 +13,10 @@
             "photo": "null",
             "description": "null",
             "karma": {
-                "ban_words": 6,
+                "ban_words": 1,
                 "bad_comment": "null",
                 "good_comment": "null",
-                "all_messages": 12
+                "all_messages": 24
             }
         },
         {
@@ -27,10 +27,11 @@
             "photo": "null",
             "description": "null",
             "karma": {
-                "ban_words": 2,
+                "ban_words": 15,
                 "bad_comment": "null",
                 "good_comment": "null",
-                "all_messages": 16
+                "all_messages": 75,
+                "reputation": 0
             }
         }
     ],

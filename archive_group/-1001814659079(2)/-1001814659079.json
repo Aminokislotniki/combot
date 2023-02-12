@@ -10,14 +10,13 @@
             "user_name": "Aminokislotniki",
             "user_username": "tima_minski",
             "status": "active",
-            "photo": "",
-            "description": "",
+            "photo": "null",
+            "description": "null",
             "karma": {
-                "ban_words": 0,
+                "ban_words": 30,
                 "bad_comment": 0,
                 "good_comment": 0,
-                "all_messages": 7,
-                "reputation": 0
+                "all_messages": 53
             }
         }
     ],

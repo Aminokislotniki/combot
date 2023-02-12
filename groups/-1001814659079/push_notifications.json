@@ -1,9 +1,9 @@
 {
-    "active": "Привет",
-    "time": "1",
-    "public": "yes",
-    "new": "Привет",
-    "new_time": "1",
+    "active": "",
+    "time": "",
+    "public": "",
+    "new": "null",
+    "new_time": "null",
     "push_statistic": "",
     "public_push_statistic": "no"
 }
